@@ -8,7 +8,7 @@ from sklearn.model_selection import cross_val_score
 import matplotlib as mpl
 mpl.use('TkAgg')
 import matplotlib.pyplot as plt
-import pydotplus
+
 
 import io
 from sklearn.externals.six import StringIO
