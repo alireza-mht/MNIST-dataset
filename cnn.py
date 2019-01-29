@@ -55,7 +55,7 @@ img_rows, img_columns = 28, 28
 y = np_utils.to_categorical(y, 10)
 y_test = np_utils.to_categorical(y_test, 10)
 input_shape = (img_rows, img_columns, 1)
-    #
+    ####################################For Creating the Model##########################################
     # model = Sequential()
     # #convolutional layer with rectified linear unit activation
     # model.add(Conv2D(32, kernel_size=(3, 3),
@@ -116,43 +116,26 @@ model.compile(loss=keras.losses.categorical_crossentropy,
 
 #test data accuracy
 score = model.evaluate(X_test, y_test, verbose=0)
-print('Test loss:', score[0]) #Test loss: 0.0296396646054
-print('Test accuracy:', score[1]) #Test accuracy: 0.9904
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
 
 #train data accuracy
 score = model.evaluate(X, y, verbose=0)
-print('Test loss:', score[0]) #Test loss: 0.0296396646054
-print('Test accuracy:', score[1]) #Test accuracy: 0.9904
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
 
 
-
-    # a = model.predict(X)
-
-    # y_pred = model.predict(X)
-    # accuracy = accuracy_score(y, y_pred)
-    # precision = precision_score(y, y_pred,average='macro')
-    # recall = recall_score(y, y_pred,average='macro')
-    # f1 = f1_score(y, y_pred,average='macro')
-    # conf_mat = confusion_matrix(y,y_pred)
-    #
-    # print('\nSVM Trained Classifier Accuracy: ',score[1])
-    # print('\nAccuracy of Classifier on Training Images: ',accuracy)
-    # print('\nPrecision of Classifier on Training Images: ',precision)
-    # print('\nRecall of Classifier on Training Images: ',recall)
-    # print('\nF1 of Classifier on Training Images: ',f1)
-    # print('\nConfusion Matrix: \n',conf_mat)
-    #
-
+###############################################For precision recall and F1-score##########################
     # test_labels_pred = model.predict(X_test)
-    # a = test_labels_pred[:,9]
-    # b = y_test[:,9]
-    # Y_test = np_utils.to_categorical(a,0)
-    # h_test = np_utils.to_categorical(b,0)
+    # lastEpochPred = test_labels_pred[:,9]
+    # lastEpochTest = y_test[:,9]
+    # lastEpochPred = np_utils.to_categorical(lastEpochPred,0)
+    # lastEpochTest = np_utils.to_categorical(lastEpochTest,0)
     #
-    # acc = accuracy_score(h_test,Y_test)
-    # tprecision = precision_score(Y_test,h_test,average='macro')
-    # trecall = recall_score(h_test,Y_test,average='macro')
-    # tf1 = f1_score(h_test,Y_test,average='macro')
+    # acc = accuracy_score(lastEpochTest,lastEpochPred)
+    # tprecision = precision_score(lastEpochTest,lastEpochPred,average='macro')
+    # trecall = recall_score(lastEpochTest,lastEpochPred,average='macro')
+    # tf1 = f1_score(lastEpochTest,lastEpochPred,average='macro')
     #
     # print('\nPrecision of Classifier on Test Images: ',tprecision)
     # print('\nRecall of Classifier on Test Images: ',trecall)
