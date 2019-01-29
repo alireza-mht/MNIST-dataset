@@ -9,7 +9,7 @@ import sys
 
 from keras.utils import np_utils
 from sklearn.model_selection import train_test_split
-from ministloader.mnist_loader import MNIST
+from mnistloader.mnist_loader import MNIST
 
 old_stdout = sys.stdout
 log_file = open("summaryRFC.log","w")
@@ -35,7 +35,7 @@ sys.stdout = log_file
 
 # Load MNIST Data
 print('\nLoading MNIST Data...')
-data = MNIST('./ministloader/dataset/')
+data = MNIST('./mnistloader/dataset/')
 
 print('\nLoading Training Data...')
 img_tra, labels_tra = data.load_training()
